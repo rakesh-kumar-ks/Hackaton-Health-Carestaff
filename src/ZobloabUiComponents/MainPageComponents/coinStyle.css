@@ -1,0 +1,61 @@
+#coin {
+    perspective: 1000px; /* Perspective for 3D effect */
+    display: inline-block; /* Allows for hover effects */
+  }
+  
+  #coin-container {
+    transform-style: preserve-3d; /* Enable 3D transformations */
+    animation: spinY 4s infinite linear; /* Spin animation */
+    transition: transform 0.1s; /* Smooth transition for hover effects */
+  }
+  
+  #coin-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+  }
+  
+  .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden; /* Hide the face that is not visible */
+  }
+  
+  .front {
+    transform: rotateY(0deg); /* Front face */
+  }
+  
+  .back {
+    transform: rotateY(180deg); /* Back face */
+  }
+  
+  @keyframes spinY {
+    from {
+      transform: rotateY(0deg); /* Start at 0 degrees */
+    }
+    to {
+      transform: rotateY(360deg); /* Rotate 360 degrees */
+    }
+  }
+  
+  @keyframes jump {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  #coin:hover #coin-container {
+    animation: spinY 2s infinite linear, jump 0.2s;
+  }
+  
