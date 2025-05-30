@@ -23,43 +23,12 @@ export default function Navbar() {
             <Webhook className="h-6 w-6" />
             <span className="sr-only">Acme Inc</span>
           </Link>
-          <Link to="/interview-portal"
-          className="text-muted-foreground transition-colors hover:text-foreground whitespace-nowrap"
-          >
-            Ai Interview
-          </Link>
+
           <Link
             to="/"
             className="text-muted-foreground transition-colors  hover:text-foreground whitespace-nowrap" 
           >
             Dashboard
-          </Link>
-
-          <Link
-            to="/contracts"
-            className="text-muted-foreground transition-colors  hover:text-foreground whitespace-nowrap" 
-          >
-            Contracts
-          </Link>
-
-
-          <Link
-            to="/jobsApplied"
-            className="text-muted-foreground transition-colors  hover:text-foreground whitespace-nowrap"
-          >
-            Jobs Applied
-          </Link>
-          <Link
-            to="/offers"
-            className="text-muted-foreground transition-colors hover:text-foreground whitespace-nowrap"
-          >
-            Offers
-          </Link>
-          <Link
-            to="/Performance-metrics"
-            className="text-muted-foreground transition-colors hover:text-foreground whitespace-nowrap"
-          >
-            Performance Metrics
           </Link>
           
           {/* text-foreground this will make the nav bar to go dark */}
@@ -84,38 +53,6 @@ export default function Navbar() {
           >
             Dashboard
           </Link>
-          <Link
-            to="/contracts"
-            className="text-muted-foreground transition-colors  hover:text-foreground whitespace-nowrap" 
-          >
-            Contracts
-          </Link>
-          <Link to="/interview-portal"
-          className="text-muted-foreground transition-colors hover:text-foreground whitespace-nowrap"
-          >
-            Ai Interview
-          </Link>
-
-          <Link
-            to="/jobsApplied"
-            className="text-muted-foreground transition-colors  hover:text-foreground whitespace-nowrap"
-          >
-            Jobs Applied
-          </Link>
-          <Link
-            to="/offers"
-            className="text-muted-foreground transition-colors hover:text-foreground whitespace-nowrap"
-          >
-            Offers
-          </Link>
-
-          <Link
-            to="/Performance-metrics"
-            className="text-muted-foreground transition-colors hover:text-foreground whitespace-nowrap"
-          >
-            Performance Metrics
-          </Link>
-
           {/* text-foreground this will make the nav bar to go dark */}
             </nav>
           </SheetContent>

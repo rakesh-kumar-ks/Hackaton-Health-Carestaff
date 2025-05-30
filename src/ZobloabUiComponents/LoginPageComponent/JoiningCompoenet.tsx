@@ -1,6 +1,4 @@
 // import Link from "next/link"
-import React, { useState, useContext} from 'react';
-import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -11,7 +9,6 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import GoogleJoinComponent from './GoogleLoginComponent';
 
 
 export default function JoiningCompoenet() {
@@ -67,7 +64,6 @@ export default function JoiningCompoenet() {
           <Button type="submit" className="w-full">
             Join now
           </Button>
-          <GoogleJoinComponent />
         </div>
       </CardContent>
     </Card>

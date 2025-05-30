@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react"
 import { urlObject } from '../../urls/Urls'
 import axios from 'axios';
-import HomepageOffersCompoenet from "./HomePageOfferComonent"
-import JobDataFilterComponent from './JobFilterComponent/JobDataFilterComponent'
-import ShimmerEffect from "@/components/ui/ShimmerEffect";
 import { Button } from "@/components/ui/button"
 
 type filters={
@@ -69,17 +66,15 @@ export default function Dashboard() {
       <main className="flex min-h-[calc(100vh_-_theme(spacing.16))] flex-1 flex-col gap-4 bg-muted/40 p-4 md:gap-8 md:p-10">
         <div className="flex gap-6">
           <aside className="w-1/5 h-1/3 p-3 rounded shadow  flex flex-col justify-between">
-            <JobDataFilterComponent filters={filters} setFilters={setFilters} />
+        
             <div className="flex justify-center mt-3">
             {Object.entries(filters).find(e=>e[1]!=undefined)?<div><Button size="lg" variant="destructive" onClick={()=>callinggetJobswithQuearyparams()} disabled={false}>Filter</Button> <Button variant="ghost" size="lg" onClick={(e)=>{clearFilter()}} >clear</Button></div>:null}
             </div>
           </aside>
         <section className="flex-1 p-3 h-[auto]">
-            <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">Welcome to the Jobs listing Section</h1>
-            {jobs.length==0?"":<p className="leading-7 [&:not(:first-child)]:mt-6">This is the main DashBoard area. Here you can see the latest Job Updated.</p>}
-            <div className="flex flex-wrap gap-2 p-3">
-              {jobs.length==0?<ShimmerEffect height="100vh" duration={4}/>:jobs.map((e:any)=>{return <HomepageOffersCompoenet JobdetailsObj={e} Jobid={e.id} userid={1} />})  }
-            </div>        
+
+
+
         </section>
         </div>
       </main>

@@ -9,8 +9,7 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import GoogleJoinComponent from './GoogleLoginComponent'
-export default function RegisteredUserLoginForm() {
+export default function RegisteredUserLoginForm({setLogin}) {
     return (
         <div className="login-component">
             <div className="login-component-interir">
@@ -33,8 +32,7 @@ export default function RegisteredUserLoginForm() {
                     </CardContent>
                     <CardFooter>
                         <div className="grid gap-0">
-                        <GoogleJoinComponent /> or
-                        <Button className="w-full">Sign in</Button>
+                        <Button className="w-full" onClick={()=>setLogin(true)}>Sign in</Button>
                         </div>
                     </CardFooter>
                 </Card>
