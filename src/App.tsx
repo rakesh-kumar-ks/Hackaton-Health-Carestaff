@@ -1,5 +1,5 @@
 import './App.css'
-import { Routes, Route  } from 'react-router-dom';
+import { Routes, Route ,useNavigate } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import { useEffect, useState } from 'react';
 import NotFound from './ZobloabUiComponents/NotFound/NotFoundComponent'
@@ -13,14 +13,19 @@ import ShimmerEffect from "@/components/ui/ShimmerEffect"; // this should not be
 
 function App() {
   const [login, setLogin] = useState(false);
+    const navigate = useNavigate();
+
+  useEffect(()=>{
+      navigate("/")
+  },[])
 
     if (!login) {
       return (
         <Suspense fallback={<ShimmerEffect/>}>
         <Routes>
             <Route path='/' element={<SparklesPreview />} />
+                     <Route path='/login' element={<RegisteredUserLoginForm setLogin={setLogin} />} />
             <Route path="/createaccount" element={<JoiningCompoenet />} />
-            <Route path='/login' element={<RegisteredUserLoginForm setLogin={setLogin} />} />
             <Route path="*" element={<NotFound/>} />
         </Routes>
         </Suspense>
@@ -29,7 +34,7 @@ function App() {
     else {
       return (
         <>
-          <Navbar />
+          <Navbar  setLogin={setLogin} />
           <Suspense fallback={<ShimmerEffect/>}>
           <Routes>
               <Route path="/" element={<Dashboard />} />

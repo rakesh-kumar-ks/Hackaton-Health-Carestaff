@@ -16,14 +16,14 @@ export default function Dashboard() {
     const [filters, setFilters] = useState<filters>({ jobType: undefined, location: undefined, Department: undefined });
 
     useEffect(()=>{
-      const urlforgettingJobs :any=urlObject.url
-      axios.get(`${urlforgettingJobs}/api/Jobs`).then((res)=>{
-          let data= res.data;
-          console.log("data",data)
-        setJobs([...res.data.data])
-      }).catch((E)=>{
-        console.error(E)
-      })
+      // const urlforgettingJobs :any=urlObject.url
+      // axios.get(`${urlforgettingJobs}/api/Jobs`).then((res)=>{
+      //     let data= res.data;
+      //     console.log("data",data)
+      //   setJobs([...res.data.data])
+      // }).catch((E)=>{
+      //   console.error(E)
+      // })
     },[])
 
     function callinggetJobswithQuearyparams() {
